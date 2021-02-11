@@ -48,6 +48,23 @@ People who sit in the back appear to drink atleast 3 times as much alcohol as th
 
 ## Inferential Tests
 
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+The p value is so small at 0.000116 that it is unlikely that the alcohol consumption in all three seats is the same. This finding causes me to reject the null hypothesis. 
+
+
+## When significant follow up with TukeyHSD  
+
+```{r}
+plot(TukeyHSD(model1))
+```
+
+The TukeyHSD plot shows that there is a significant difference between the amount of alcohol that people sitting in the back versus the people in the front, the people in the back drink more. It also shows that people in the back drink a lot more alcohol than those sitting in the middle, however, there is no difference in the average amount of alcohol that the people in the middle and front drink.
+
+
 ## Conclusions
 
-
+The evidence in this study shows that the people who consume the most amount of alcohol sit in the back row. 
